@@ -10,10 +10,6 @@ import com.example.pokemongo.R
 
 class CommunityFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = CommunityFragment()
-    }
-
     private lateinit var viewModel: CommunityViewModel
 
     override fun onCreateView(
@@ -26,7 +22,6 @@ class CommunityFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(CommunityViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }
