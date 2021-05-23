@@ -1,81 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="14dp"
-    app:cardCornerRadius="0dp"
-    app:strokeColor="@color/black"
-    app:strokeWidth="1dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginVertical="20dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        app:cardCornerRadius="0dp"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
 
-        <ImageView
-            android:id="@+id/pokemon_image_view"
-            android:layout_width="92dp"
-            android:layout_height="92dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="20dp">
 
-        <TextView
-            android:id="@+id/trainer_name_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/text_margin"
-            android:layout_marginTop="4dp"
-            android:textAppearance="?attr/textAppearanceListItem"
-            app:layout_constraintStart_toEndOf="@id/pokemon_image_view"
-            app:layout_constraintTop_toTopOf="@id/pokemon_image_view"
-            tools:text="Fake Trainer 1" />
+            <ImageView
+                android:id="@+id/pokemon_image_view"
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
 
-        <TextView
-            android:id="@+id/captured_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/captured"
-            android:textAppearance="?attr/textAppearanceListItem"
-            app:layout_constraintStart_toStartOf="@id/trainer_name_text_view"
-            app:layout_constraintTop_toBottomOf="@id/trainer_name_text_view" />
+            <TextView
+                android:id="@+id/trainer_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/text_margin"
+                android:layout_marginTop="4dp"
+                android:textAppearance="?attr/textAppearanceListItem"
+                app:layout_constraintStart_toEndOf="@id/pokemon_image_view"
+                app:layout_constraintTop_toTopOf="@id/pokemon_image_view"
+                tools:text="Fake Trainer 1" />
 
-        <TextView
-            android:id="@+id/pokemon_name_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?attr/textAppearanceListItem"
-            app:layout_constraintStart_toStartOf="@id/trainer_name_text_view"
-            app:layout_constraintTop_toBottomOf="@id/captured_label"
-            tools:text="Bulbasaur" />
+            <TextView
+                android:id="@+id/captured_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/captured"
+                android:textAppearance="?attr/textAppearanceListItem"
+                app:layout_constraintStart_toStartOf="@id/trainer_name_text_view"
+                app:layout_constraintTop_toBottomOf="@id/trainer_name_text_view" />
 
-        <TextView
-            android:id="@+id/captured_at_text_view"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
-            android:maxLines="2"
-            android:textAppearance="?attr/textAppearanceListItem"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
-            app:layout_constraintStart_toEndOf="@id/pokemon_name_text_view"
-            app:layout_constraintTop_toTopOf="@id/pokemon_name_text_view"
-            tools:text="3 min ago" />
+            <TextView
+                android:id="@+id/pokemon_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceListItem"
+                app:layout_constraintStart_toStartOf="@id/trainer_name_text_view"
+                app:layout_constraintTop_toBottomOf="@id/captured_label"
+                tools:text="Bulbasaur" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="92dp"
-            android:layout_height="92dp"
-            android:layout_marginHorizontal="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            <TextView
+                android:id="@+id/captured_at_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:maxLines="2"
+                android:textAppearance="?attr/textAppearanceListItem"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintStart_toEndOf="@id/pokemon_name_text_view"
+                app:layout_constraintTop_toTopOf="@id/pokemon_name_text_view"
+                tools:text="3 min ago" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                android:layout_marginHorizontal="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-</com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
