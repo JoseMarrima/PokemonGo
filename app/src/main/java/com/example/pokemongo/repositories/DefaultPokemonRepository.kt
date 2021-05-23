@@ -2,7 +2,7 @@ package com.example.pokemongo.repositories
 
 import com.example.pokemongo.data.remote.PokemonService
 import com.example.pokemongo.model.myteam.MyTeamResponse
-import io.reactivex.Single
+import io.reactivex.rxjava3.core.Single
 
 class DefaultPokemonRepository(/**private val dao: PokemonDao,**/ private val service: PokemonService): IPokemonRepository {
 

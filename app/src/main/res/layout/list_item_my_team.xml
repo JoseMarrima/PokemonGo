@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="team"
+            type="com.example.pokemongo.model.myteam.MyTeam" />
+
+        <variable
+            name="clickListener"
+            type="com.example.pokemongo.ui.myteam.MyTeamClickListener" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:contentPadding="12dp"
+            app:cardCornerRadius="0dp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="24dp">
+
+                <ImageView
+                    android:layout_width="92dp"
+                    android:layout_height="92dp"
+                    android:id="@+id/pokemon_image_view"
+                    tools:src="@tools:sample/avatars"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/trainer_name_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    app:layout_constraintTop_toTopOf="@id/pokemon_image_view"
+                    app:layout_constraintStart_toEndOf="@id/pokemon_image_view"
+                    android:layout_marginStart="@dimen/text_margin"
+                    android:textAppearance="?attr/textAppearanceListItem" />
+
+                <TextView
+                    android:id="@+id/name_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Bulbasaur"
+                    android:text="@{team.name}"
+                    app:layout_constraintTop_toTopOf="@id/trainer_name_text_view"
+                    app:layout_constraintStart_toEndOf="@id/trainer_name_text_view"
+                    android:layout_marginStart="4dp"
+                    android:textAppearance="?attr/textAppearanceListItem" />
+
+                <TextView
+                    android:id="@+id/hp_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hp"
+                    app:layout_constraintTop_toBottomOf="@id/trainer_name_text_view"
+                    app:layout_constraintStart_toStartOf="@id/trainer_name_text_view"
+                    android:textAppearance="?attr/textAppearanceListItem" />
+
+                <TextView
+                    android:id="@+id/hp_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="100/100"
+                    app:layout_constraintTop_toTopOf="@id/hp_label"
+                    app:layout_constraintStart_toEndOf="@id/hp_label"
+                    android:layout_marginStart="4dp"
+                    android:textAppearance="?attr/textAppearanceListItem" />
+
+                <TextView
+                    android:id="@+id/type_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type"
+                    app:layout_constraintTop_toBottomOf="@id/hp_label"
+                    app:layout_constraintStart_toStartOf="@id/trainer_name_text_view"
+                    android:textAppearance="?attr/textAppearanceListItem" />
+
+                <TextView
+                    android:id="@+id/type_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Grass"
+                    app:layout_constraintTop_toTopOf="@id/type_label"
+                    app:layout_constraintStart_toEndOf="@id/type_label"
+                    android:layout_marginStart="4dp"
+                    android:textAppearance="?attr/textAppearanceListItem" />
+
+                <TextView
+                    android:id="@+id/captured_at_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/captured_at"
+                    app:layout_constraintTop_toBottomOf="@id/type_label"
+                    app:layout_constraintStart_toStartOf="@id/trainer_name_text_view"
+                    android:textAppearance="?attr/textAppearanceListItem" />
+
+                <TextView
+                    android:id="@+id/captured_at_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="May 10 2019"
+                    android:text="@{team.capturedAt}"
+                    app:layout_constraintTop_toTopOf="@id/captured_at_label"
+                    app:layout_constraintStart_toEndOf="@id/captured_at_label"
+                    android:layout_marginStart="4dp"
+                    android:textAppearance="?attr/textAppearanceListItem" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+</layout>

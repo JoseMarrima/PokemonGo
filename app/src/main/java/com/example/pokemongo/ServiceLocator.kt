@@ -11,7 +11,7 @@ import com.example.pokemongo.repositories.IPokemonRepository
 import com.example.pokemongo.util.*
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceLocator {
@@ -45,7 +45,7 @@ object ServiceLocator {
 
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .baseUrl(BASE_URL)
             .build()
             .create(TokenService::class.java)
@@ -55,7 +55,7 @@ object ServiceLocator {
 
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .baseUrl(BASE_URL)
             .client(provideOkHTTPClient(context))
             .build()
